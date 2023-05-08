@@ -1,7 +1,7 @@
 import "./style.css";
 import viteLogo from "/vite.svg";
 import { setupCounter } from "./counter.ts";
-import "./sandbox.ts";
+import "./sandbox3.ts";
 import "./exercise1.ts";
 
 document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
