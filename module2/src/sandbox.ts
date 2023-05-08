@@ -25,11 +25,6 @@ export interface Song extends CatalogItem {
   duration: number;
 }
 
-function fillWithMetadata(item: CatalogItem): CatalogItem {
-  item.metadata = getMetadata(item);
-  return item;
-}
-
 const emptyArtist: Artist = {
   id: "0",
   url: "url",
@@ -37,4 +32,4 @@ const emptyArtist: Artist = {
   metadata: {},
 };
 
-const fullArtist = fillWithMetadata(emptyArtist);
+// create a function fillWithMetadata that takes in a CatalogItem, fills its metadata property, and then returns it back
