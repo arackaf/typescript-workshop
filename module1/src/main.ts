@@ -3,7 +3,7 @@ import typescriptLogo from "./typescript.svg";
 import viteLogo from "/vite.svg";
 import { setupCounter } from "./counter.ts";
 import "./sandbox";
-import "./util";
+import "./exercise1.ts";
 
 document.querySelector<HTMLDivElement>("#app")!.innerHTML = `
   <div>
