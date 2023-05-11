@@ -56,3 +56,5 @@ const evenNumbers = filter<number>(numbers, (x) => x % 2 === 0);
 //const x = filter<string>(numbers, x => x % 2 === 0);
 
 const evenNumbers2 = filter(numbers, (x) => x % 2 === 0);
+
+export default null;
