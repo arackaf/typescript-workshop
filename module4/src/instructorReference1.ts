@@ -8,6 +8,7 @@ class Circle extends Shape {
 
 let circle = new Circle();
 let shape = new Shape();
+//circle = new Shape();
 
 let shape2: Shape = new Circle();
 
@@ -29,5 +30,16 @@ let getShape: () => Shape = () => new Shape();
 //getCircle = getShape;
 getShape = getCircle;
 
-type X = (a: string, b: number, c: number) => void;
-type p = Parameters<X>[0];
+// Conditional types
+
+type IsArray<T> = T extends Array<unknown> ? true : false;
+
+type A = IsArray<string[]>;
+type B = IsArray<string>;
+
+// Inferring types
+
+type ArrayOfWhat<T extends Array<unknown>> = T extends Array<infer U> ? U : never;
+
+type C = ArrayOfWhat<string[]>;
+//type D = ArrayOfWhat<string>;
