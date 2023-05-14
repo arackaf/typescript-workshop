@@ -38,3 +38,5 @@ function logAll2(...values: (string | number)[]) {
 logAll2(1, "2", 3, "4", 5, "6");
 
 // TODO: any, unknown, never
+
+// Tuple types, indexed types
