@@ -1,3 +1,10 @@
+function getMetadata(_: CatalogItem): Record<string, string> {
+  return {
+    item1: "123",
+    item2: "xyz",
+  };
+}
+
 export interface CatalogItem {
   id: string;
   url: string;
@@ -18,12 +25,11 @@ export interface Song extends CatalogItem {
   duration: number;
 }
 
-// type this function - it takes in an artbitraru item that's a CatalogItem, and it returns a promise that will eventually
-// hold an array of (in theory) similar items of the same type (though for now we're just hard coding the same item).
-function getSimilarItems(item: unknown): unknown {
-  return Promise.resolve([item, item, item]);
-}
+const emptyArtist: Artist = {
+  id: "0",
+  url: "url",
+  name: "Taylor Swift",
+  metadata: {},
+};
 
-const x = getSimilarItems({ id: "", url: "", metadata: {}, name: "" } as Artist);
-
-// x should be Promise<Artist[]>
+// create a function fillWithMetadata that takes in a CatalogItem, fills its metadata property, and then returns it back
