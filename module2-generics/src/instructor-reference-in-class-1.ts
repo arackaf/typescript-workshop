@@ -20,7 +20,7 @@ export interface Song extends CatalogItem {
 
 // type this function - it takes in an artbitrary item that's a CatalogItem, and it returns a promise that will eventually
 // hold an array of (in theory) similar items of the same type (though for now we're just hard coding the same item).
-function getSimilarItems(item: unknown): unknown {
+function getSimilarItems<T extends CatalogItem>(item: T): Promise<T[]> {
   return Promise.resolve([item, item, item]);
 }
 
