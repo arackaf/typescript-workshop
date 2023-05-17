@@ -74,6 +74,10 @@ class Foo<T1, T2> {
   }
 }
 
-let fooInst = new Foo(12, "Hello");
+let fooInst1 = new Foo<number, string>(12, "Hello");
+
+//let fooInstWrong = new Foo<boolean, string>(12, "Hello");
+
+let fooInst2 = new Foo(12, "Hello");
 
 export default null;
