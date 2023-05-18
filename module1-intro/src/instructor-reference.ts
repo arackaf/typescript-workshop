@@ -12,10 +12,10 @@ let s2: string;
 let b: boolean;
 let n: number;
 
-// all types inherit from any. BUT without any type checking at all
+// No type checking at all
 let a: any;
 
-// all types inherit from unknown, as well, BUT you can't really use it. Only check for equality, or use things like instanceof
+// all types assignable to unknown, as well, BUT you can't really use it. Only check for equality, or use things like instanceof
 let u: unknown;
 
 // never represents a type that will never exist / never have any value
@@ -105,10 +105,19 @@ let obj: SomeObject = {
   active: true,
 };
 
+let obj2 = {
+  name: "Kevin",
+  age: 20,
+  active: true,
+};
+
+type SomeObject2 = typeof obj2;
+
 // grab a slice of a type
 
 // type SomeObjectName = SomeObject.name;
 // type SomeObjectName = SomeObject::name;
+
 type SomeObjectName = SomeObject["name"];
 
 type KeyOfSomeObject = keyof SomeObject;

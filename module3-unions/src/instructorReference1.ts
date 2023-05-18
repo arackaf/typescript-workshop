@@ -3,6 +3,7 @@ type Cat = {
   whiskers: number;
   catBreed: string;
 
+  // casing does not matter - I just wanted it to stand out - could name it anything
   TYPE: "CAT";
 };
 
