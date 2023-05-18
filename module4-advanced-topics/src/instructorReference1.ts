@@ -8,6 +8,8 @@ class Circle extends Shape {
 
 let circle = new Circle();
 let shape = new Shape();
+
+// error
 //circle = new Shape();
 
 let shape2: Shape = new Circle();
@@ -39,7 +41,11 @@ type B = IsArray<string>;
 
 // Inferring types
 
-type ArrayOfWhat<T extends Array<unknown>> = T extends Array<infer U> ? U : never;
+type ArrayOfWhat1<T> = T extends Array<infer U> ? U : never;
 
-type C = ArrayOfWhat<string[]>;
-//type D = ArrayOfWhat<string>;
+type ArrayOfWhat2<T extends Array<unknown>> = T extends Array<infer U> ? U : never;
+
+type C = ArrayOfWhat1<string[]>;
+type D = ArrayOfWhat1<string>;
+
+type CC = ArrayOfWhat2<string[]>;
