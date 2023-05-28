@@ -28,8 +28,11 @@ function draw(item: Shape) {
 
 draw(circle);
 
-let drawShapeFunction: (item: Shape) => void = (_) => {};
-let drawCircleFunction: (item: Circle) => void = (_) => {};
+type DrawShapeFn = (item: Shape) => void;
+type DrawCircleFn = (item: Circle) => void;
+
+let drawShapeFunction: DrawShapeFn = (_: Shape) => {};
+let drawCircleFunction: DrawCircleFn = (_: Circle) => {};
 
 drawCircleFunction = drawShapeFunction;
 //drawShapeFunction = drawCircleFunction;
