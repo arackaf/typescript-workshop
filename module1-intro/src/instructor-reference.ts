@@ -105,28 +105,28 @@ let obj: SomeObject = {
   active: true,
 };
 
-let obj2 = {
-  name: "Kevin",
-  age: 20,
+let defaultState = {
+  title: "",
   active: true,
+  count: 0,
 };
 
-type SomeObject2 = typeof obj2;
+type DefaultState = typeof defaultState;
 
 // grab a slice of a type
 
-// type SomeObjectName = SomeObject.name;
-// type SomeObjectName = SomeObject::name;
+// type DefaultStateTitle = DefaultState.name;
+// type DefaultStateTitle = DefaultState::name;
 
-type SomeObjectName = SomeObject["name"];
+type DefaultStateTitle = DefaultState["title"];
 
-type KeyOfSomeObject = keyof SomeObject;
-let x: KeyOfSomeObject;
+type KeyOfDefaultState = keyof DefaultState;
+let x: KeyOfDefaultState;
 
 // now let's peak ahead - generics come later, but let's see something neat ...
 
-type TypeOfSomeObjectProperty<T extends keyof SomeObject> = SomeObject[T];
-type Name = TypeOfSomeObjectProperty<"name">;
+type TypeOfDefaultStateProperty<T extends keyof DefaultState> = DefaultState[T];
+type Name = TypeOfDefaultStateProperty<"title">;
 
 // Tuples
 type StringNumberTuple = [string, number];
@@ -134,3 +134,5 @@ type StringNumberTuple = [string, number];
 let tuple: StringNumberTuple = ["", 2];
 
 let tupleStr = tuple[0];
+
+export default null;
