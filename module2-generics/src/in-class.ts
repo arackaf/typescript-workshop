@@ -18,12 +18,19 @@ export interface Song extends CatalogItem {
   duration: number;
 }
 
-// type this function - it takes in an artbitrary item that's a CatalogItem, and it returns a promise that will eventually
-// hold an array of (in theory) similar items of the same type (though for now we're just hard coding the same item).
+let someArtist: Artist = {
+  id: "",
+  url: "",
+  metadata: {},
+  name: "",
+};
+
+// type this function - it takes in an artbitrary item that's a CatalogItem, and it returns an array of (in theory)
+// similar items of the same type (though for now we're just hard coding the same item).
 function getSimilarItems(item: unknown): unknown {
-  return Promise.resolve([item, item, item]);
+  return [item, item, item];
 }
 
-const x = getSimilarItems({ id: "", url: "", metadata: {}, name: "" } as Artist);
+const x = getSimilarItems(someArtist);
 
 // x should be Promise<Artist[]>
