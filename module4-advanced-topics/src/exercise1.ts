@@ -1,1 +1,1 @@
-// write a ReturnType and Parameters helper type
+// write a GetReturnType and GetParameters helper type
