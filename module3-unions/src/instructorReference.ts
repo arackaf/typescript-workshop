@@ -29,6 +29,17 @@ export function dealWithCatOrDog2(animal: Cat | Dog) {
   }
 }
 
+const randomObject = {
+  name: "Muffin",
+  whiskers: 12,
+
+  TYPE: "CAT" as const,
+};
+
+let someCat: Cat;
+
+someCat = randomObject;
+
 type StringOrNumber = string | number;
 
 let sOrN: StringOrNumber = Math.random() < 0.5 ? 12 : "Hello";
