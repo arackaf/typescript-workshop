@@ -1,7 +1,6 @@
 type Cat = {
   name: string;
   whiskers: number;
-  catBreed: string;
 
   // casing does not matter - I just wanted it to stand out - could name it anything
   TYPE: "CAT";
@@ -10,24 +9,23 @@ type Cat = {
 type Dog = {
   name: string;
   obedient: boolean;
-  dogBreed: string;
 
   TYPE: "DOG";
 };
 
 export function dealWithCatOrDog(animal: Cat | Dog) {
   if ("whiskers" in animal) {
-    console.log("Cat", animal.name, animal.catBreed, animal.whiskers);
+    console.log("Cat", animal.name, animal.whiskers);
   } else {
-    console.log("Dog", animal.name, animal.dogBreed, animal.obedient);
+    console.log("Dog", animal.name, animal.obedient);
   }
 }
 
 export function dealWithCatOrDog2(animal: Cat | Dog) {
   if (animal.TYPE === "CAT") {
-    console.log("Cat", animal.name, animal.catBreed, animal.whiskers);
+    console.log("Cat", animal.name, animal.whiskers);
   } else {
-    console.log("Dog", animal.name, animal.dogBreed, animal.obedient);
+    console.log("Dog", animal.name, animal.obedient);
   }
 }
 
