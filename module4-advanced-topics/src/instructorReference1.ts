@@ -63,4 +63,34 @@ type D = ArrayOfWhat1<string>;
 
 type CC = ArrayOfWhat2<string[]>;
 
+// Mapped types
+
+type CorrectLifeChoices = {
+  conference: "RenderATL";
+  city: "Atlanta";
+  language: "TypeScript";
+};
+
+type Keys = keyof CorrectLifeChoices;
+
+type CorrectLifeChoicesCopy = {
+  [K in keyof CorrectLifeChoices]: CorrectLifeChoices[K];
+};
+
+type CorrectLifeChoices_Getters = {
+  [K in keyof CorrectLifeChoices]: () => CorrectLifeChoices[K];
+};
+
+type CorrectLifeChoices_Getters_BetterNames = {
+  [K in keyof CorrectLifeChoices as `get${K}`]: () => CorrectLifeChoices[K];
+};
+
+type CorrectLifeChoices_Getters_BetterNamesStill = {
+  [K in keyof CorrectLifeChoices as `get${Capitalize<K>}`]: () => CorrectLifeChoices[K];
+};
+
+type ThingsThatMatterInLife = {
+  [K in keyof CorrectLifeChoices]: CorrectLifeChoices[K];
+}[keyof CorrectLifeChoices];
+
 export default null;
