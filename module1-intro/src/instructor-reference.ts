@@ -54,6 +54,8 @@ function logAll2(...values: (string | number)[]) {
 
 logAll2(1, "2", 3, "4", 5, "6");
 
+type BoolForSomeReason = boolean;
+
 type TwoStringsReturnNumber = (s1: string, s2: string) => number;
 type LogTwoStrings = (s1: string, s2: string) => void;
 
@@ -66,8 +68,6 @@ const fn2: LogTwoStrings = (s1, s2) => {
 };
 
 // declaring types
-
-type BoolForSomeReason = boolean;
 
 // types can be combined
 
