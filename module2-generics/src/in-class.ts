@@ -27,7 +27,7 @@ let someArtist: Artist = {
 
 // type this function - it takes in an artbitrary item that's a CatalogItem, and it returns an array of (in theory)
 // similar items of the same type (though for now we're just hard coding the same item).
-function getSimilarItems(item: unknown): unknown {
+function getSimilarItems(item: unknown): unknown[] {
   return [item, item, item];
 }
 
