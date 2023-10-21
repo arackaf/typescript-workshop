@@ -8,10 +8,4 @@ type Dog = {
   obedient: boolean;
 };
 
-let catOrDog: Cat | Dog;
-
-let catAndDog: Cat & Dog;
-
-function dealWithCatOrDog(animal: Cat | Dog) {}
-
 export default null;
