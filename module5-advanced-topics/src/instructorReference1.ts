@@ -14,11 +14,13 @@ class Circle extends Shape {
   radius: number = 0;
 }
 
-let circle = new Circle();
-let shape = new Shape();
+let circle: Circle = new Circle();
+let shape: Shape = new Shape();
 
 // error
 //circle = new Shape();
+
+shape = new Circle();
 
 let shape2: Shape = new Circle();
 
