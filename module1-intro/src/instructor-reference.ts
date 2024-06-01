@@ -16,10 +16,10 @@ let n: number;
 let a: any;
 
 // all types assignable to unknown, as well, BUT you can't really use it. Only check for equality, or use things like instanceof
-let u: unknown;
+let u: unknown = 12 as any;
 
 // never represents a type that will never exist / never have any value
-let nev: never;
+let nev: never = {} as never;
 
 // typing functions
 
@@ -54,6 +54,8 @@ function logAll2(...values: (string | number)[]) {
 
 logAll2(1, "2", 3, "4", 5, "6");
 
+// declaring types
+
 type BoolForSomeReason = boolean;
 
 type TwoStringsReturnNumber = (s1: string, s2: string) => number;
@@ -66,8 +68,6 @@ const fn: TwoStringsReturnNumber = (s1, s2) => {
 const fn2: LogTwoStrings = (s1, s2) => {
   console.log(s1, s2);
 };
-
-// declaring types
 
 // types can be combined
 
@@ -117,7 +117,6 @@ type DefaultState = typeof defaultState;
 
 // type DefaultStateTitle = DefaultState.name;
 // type DefaultStateTitle = DefaultState::name;
-
 type DefaultStateTitle = DefaultState["title"];
 
 type KeyOfDefaultState = keyof DefaultState;
