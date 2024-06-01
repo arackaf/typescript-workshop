@@ -13,14 +13,14 @@ const b = [1, 2, "3"]
     return val + 1;
   });
 
-type Junk = {
-  12: number;
-  b: string;
-};
+// Prelude
 
-type A = {
-  [K in keyof Junk]: K extends string ? K : "number";
-};
+type Union = "A" | "B" | 12 | 42 | "C";
+type OnlyStrings<T> = T extends string ? T : never;
+
+type StringsInUnion = OnlyStrings<Union>;
+
+// Actual Mapped types
 
 type CorrectLifeChoices = {
   conference: "RenderATL";
@@ -44,9 +44,26 @@ type CorrectLifeChoices_Getters_BetterNamesStill = {
   [K in keyof CorrectLifeChoices as `get${Capitalize<K>}`]: () => CorrectLifeChoices[K];
 };
 
+// ---------------------------------------------------------------------------
+
+type ThingsThatMatterInLife_Object = {
+  [K in keyof CorrectLifeChoices]: CorrectLifeChoices[K];
+};
+
+type Keys = keyof ThingsThatMatterInLife_Object;
+// type Keys = 'conference' | 'city' | 'language';
+
+//type Values = ThingsThatMatterInLife_Object["conference" | 'city' | 'language']
+
+type Values = ThingsThatMatterInLife_Object[Keys];
+
+// ------
+
 type ThingsThatMatterInLife = {
   [K in keyof CorrectLifeChoices]: CorrectLifeChoices[K];
 }[keyof CorrectLifeChoices];
+
+// ---------------------------------------------------------------------------
 
 // ---------
 
