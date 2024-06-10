@@ -19,7 +19,13 @@ let a: any;
 let u: unknown = 12 as any;
 
 // never represents a type that will never exist / never have any value
-let nev: never = {} as never;
+function neverFunc(): never {
+  throw new Error();
+}
+
+let nev: never = neverFunc();
+
+b = nev;
 
 // typing functions
 
@@ -72,9 +78,10 @@ const fn2: LogTwoStrings = (s1, s2) => {
 // types can be combined
 
 type BoolOrString = boolean | string;
-// union - we'll just pretend it means or ... more on this later
 
-let bool: BoolForSomeReason = true;
+let boolOrString: BoolOrString = true;
+boolOrString = "Hello";
+// union - we'll just pretend it means or ... more on this later
 
 // types can hold literal valies
 type Yes = "YES";
@@ -115,8 +122,8 @@ type DefaultState = typeof defaultState;
 
 // grab a slice of a type
 
-// type DefaultStateTitle = DefaultState.name;
-// type DefaultStateTitle = DefaultState::name;
+// type DefaultStateTitle = DefaultState.title;
+// type DefaultStateTitle = DefaultState::title;
 type DefaultStateTitle = DefaultState["title"];
 
 type KeyOfDefaultState = keyof DefaultState;
@@ -125,7 +132,7 @@ let x: KeyOfDefaultState;
 // now let's peak ahead - generics come later, but let's see something neat ...
 
 type TypeOfDefaultStateProperty<T extends keyof DefaultState> = DefaultState[T];
-type Name = TypeOfDefaultStateProperty<"title">;
+type Title = TypeOfDefaultStateProperty<"title">;
 
 // Tuples
 type StringNumberTuple = [string, number];
