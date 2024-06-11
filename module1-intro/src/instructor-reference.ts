@@ -9,14 +9,16 @@ let s2: string;
 //s2 = 12;
 
 // types
-let b: boolean;
-let n: number;
+let b: boolean = true;
+let n: number = 12;
 
 // No type checking at all
 let a: any;
 
 // all types assignable to unknown, as well, BUT you can't really use it. Only check for equality, or use things like instanceof
 let u: unknown = 12 as any;
+
+u = b;
 
 // never represents a type that will never exist / never have any value
 function neverFunc(): never {

@@ -3,15 +3,18 @@ type Cat = {
   whiskers: number;
 
   // casing does not matter - I just wanted it to stand out - could name it anything
-  TYPE: "CAT";
+  TYPE: "CAT"; // add later
 };
 
 type Dog = {
   name: string;
   obedient: boolean;
 
-  TYPE: "DOG";
+  TYPE: "DOG"; // add later
 };
+
+// let animal: Cat | Dog;
+// animal.
 
 export function dealWithCatOrDog(animal: Cat | Dog) {
   if ("whiskers" in animal) {
