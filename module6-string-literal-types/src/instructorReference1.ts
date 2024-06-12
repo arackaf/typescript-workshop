@@ -16,9 +16,9 @@ type AdminPaths_A = PluckPathsFor_A<AllPaths, "admin">;
 
 type PluckPathsFor_B<T, Path extends string> = T extends `/${Path}/${infer U}` ? U : never;
 
-type AdminPaths = PluckPathsFor_B<AllPaths, "admin">;
+type AdminPaths_B = PluckPathsFor_B<AllPaths, "admin">;
 
-function doSomething(path: AdminPaths) {}
+function doSomething(path: AdminPaths_B) {}
 
 doSomething("billing");
 doSomething("settings");

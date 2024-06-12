@@ -95,4 +95,6 @@ type IdTypes3 = {
   [K in keyof Account as K extends `${infer U}${"Id"}` ? U : never]: Account[K];
 };
 
+type KeyProps = keyof IdTypes3;
+
 export default null;
