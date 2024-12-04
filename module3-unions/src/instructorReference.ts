@@ -36,7 +36,7 @@ const randomObject = {
   name: "Muffin",
   whiskers: 12,
 
-  TYPE: "CAT" as const,
+  TYPE: "CAT" as const, //add the as const after showing the error
 };
 
 let someCat: Cat;

@@ -16,7 +16,7 @@ let n: number = 12;
 let a: any;
 
 // all types assignable to unknown, as well, BUT you can't really use it. Only check for equality, or use things like instanceof
-let u: unknown = 12 as any;
+let u: unknown = 12;
 
 u = b;
 
