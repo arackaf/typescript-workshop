@@ -20,6 +20,9 @@ type OnlyStrings<T> = T extends string ? T : never;
 
 type StringsInUnion = OnlyStrings<Union>;
 
+type Junk = `Valid values are: ${Union}`;
+const x: Junk = "Valid values are: 12";
+
 // Actual Mapped types
 
 type CorrectLifeChoices = {

@@ -1,3 +1,17 @@
+type YesOrNo = "YES" | "NO";
+
+type ValidAnswerJunk = `My answer is ${string}`;
+const x: ValidAnswerJunk = "My answer is blahhhhhhhh";
+// @ts-expect-error
+const y: ValidAnswerJunk = "My answer isX blahhhhhhhh";
+
+type ValidAnswer = `My answer is ${YesOrNo}`;
+
+const answerA: ValidAnswer = "My answer is YES";
+
+// @ts-expect-error
+const answerB: ValidAnswer = "My answer is blahhhhhhh";
+
 const paths = {
   users: "/users",
   userContacts: "/users/contacts",
