@@ -26,8 +26,8 @@ const x: Junk = "Valid values are: 12";
 // Actual Mapped types
 
 type CorrectLifeChoices = {
-  conference: "RenderATL";
-  city: "Atlanta";
+  conference: "Commit Your Code";
+  city: "Dallas";
   language: "TypeScript";
 };
 
