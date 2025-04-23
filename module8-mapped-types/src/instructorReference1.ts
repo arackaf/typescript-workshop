@@ -54,6 +54,7 @@ type ThingsThatMatterInLife_Object = {
 };
 
 type Keys = keyof ThingsThatMatterInLife_Object;
+
 // type Keys = 'conference' | 'city' | 'language';
 
 //type Values = ThingsThatMatterInLife_Object["conference" | 'city' | 'language']
@@ -78,22 +79,27 @@ type Account = {
   myIdentification: string;
 };
 
+// all fields with ID
 type IdFields = {
   [K in keyof Account as K extends `${string}${"id" | "Id"}` ? K : never]: Account[K];
 };
 
+// ok let's include Id__entification__
 type IdFields2 = {
   [K in keyof Account as K extends `${string}${"id" | "Id"}${string}` ? K : never]: Account[K];
 };
 
+// let's strip just the name of the types of id's
 type IdTypes = {
   [K in keyof Account as K extends `${infer U}${"id" | "Id"}` ? U : never]: Account[K];
 };
 
+// clean it up and strip the empty id
 type IdTypes2 = {
   [K in keyof Account as K extends `${infer U}${"id" | "Id"}` ? (U extends "" ? never : U) : never]: Account[K];
 };
 
+// ok I lied it's really this simple but I wanted to walk through some gross examples
 type IdTypes3 = {
   [K in keyof Account as K extends `${infer U}${"Id"}` ? U : never]: Account[K];
 };
