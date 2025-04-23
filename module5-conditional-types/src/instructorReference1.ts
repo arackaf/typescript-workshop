@@ -17,3 +17,5 @@ type C = ArrayOfWhat1<string[]>;
 type D = ArrayOfWhat1<string>;
 
 type CC = ArrayOfWhat2<string[]>;
+
+export default null;

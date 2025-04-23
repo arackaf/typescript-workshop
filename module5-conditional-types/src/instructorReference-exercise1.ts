@@ -37,3 +37,5 @@ const actualFunction = (a: number, b: number[], c: string[][]) => {
 };
 
 type StringArrArr = GetParameter<typeof actualFunction, 2>;
+
+export default null;
